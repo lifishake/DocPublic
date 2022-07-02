@@ -1,0 +1,27 @@
+patch:
+  punctuator/import_preset: atsymbols
+  recognizer/patterns/punct: '^[@/]([0-9]0?|[A-Za-z]+)$' #/开头输入各种符号，@开头输入数字变体
+  speller/alphabet: 'zyxwvutsrqponmlkjihgfedcba/'        #增加一个/用于符号输入
+  speller/algebra:
+    - erase/^xx$/
+    - abbrev/^([a-z]).+$/$1/                #区别词里各个字的首字母，保留
+    - abbrev/^([zcs]h).+$/$1/               #zhchsh的精确识别，保留。“谬种流传”⇒“mzhlch”
+    - derive/^([nl])ve$/$1ue/               #luenue转成lvenve，保留，习惯改不掉了。
+    #- derive/^([jqxy])u/$1v/               #看见鱼眼要挖去，不会犯的错误。
+    #- derive/un$/uen/                      #不会犯的错误
+    #- derive/ui$/uei/                      #不会犯的错误
+    #- derive/iu$/iou/                      #不会犯的错误
+    #- derive/([aeiou])ng$/$1gn/            #不会犯的错误
+    #- derive/([dtngkhrzcs])o(u|ng)$/$1o/   #不会犯的错误
+    #- derive/ong$/on/                      #不会犯的错误
+    #- derive/ao$/oa/                       #不会犯的错误
+    #- derive/([iu])a(o|ng?)$/a$1$2/        #不会犯的错误
+
+  engine/translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - script_translator
+    - lua_translator@time_translator      #当前时间， time， shijian
+    - lua_translator@number_translator    #数字转大小写中文 IXXXXXX
+    - lua_translator@date_translator      #当前日期 date， riqi
+    - lua_translator@week_translator      #星期几 xingqi， xqj

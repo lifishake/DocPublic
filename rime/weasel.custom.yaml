@@ -1,0 +1,27 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Tue Jun 21 13:13:42 2022"
+  rime_version: 1.5.3
+patch:
+  app_options/devenv.exe/ascii_mode: true   #visual studio
+  app_options/code.exe/ascii_mode: true     #VScode
+  app_options/wrwb.exe/ascii_mode: true     #workbench
+  app_options/taskmgr.exe/ascii_mode: true  #任务管理器
+  preset_color_schemes/lblg:
+    name: "两把琅玕／lblg"
+    author: "高望重"
+    text_color: 0x896b73
+    back_color: 0xefffff
+    border_color: 0x2238dc
+    hilited_text_color: 0xf4855d
+    hilited_back_color: 0xefffff
+    candidate_text_color: 0xd8daf9		#备选文字颜色
+    hilited_candidate_text_color: 0x000200
+    hilited_candidate_back_color: 0xd8daf9
+  "style/horizontal": true                  #横排
+  "style/font_face": "Microsoft YaHei"      #微软雅黑
+  "style/font_point": 13                    #字号
+  "style/layout/border_width": 1            #边框宽度
+  "style/color_scheme": lblg

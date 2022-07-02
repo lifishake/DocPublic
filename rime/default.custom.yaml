@@ -1,0 +1,28 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sat Jun 25 14:03:22 2022"
+  rime_version: 1.5.3
+patch:
+  "menu/page_size": 9
+  ascii_composer/switch_key:  # ctrl&&shift 切换键效果
+    Caps_Lock: clear # 清屏幕
+    Shift_L: commit_code # 上档code
+    Control_L: noop # 不处理
+    Shift_R: commit_code # 切换字符不上档
+    Control_R: noop # 不处理
+  key_binder:
+    bindings:
+      - { when: always, accept: Control+period, toggle: ascii_punct } # 切换西文/中文标点 Ctrl + .
+      - { when: always, accept: Control+Shift+t, toggle: zh_simp }
+      - { when: always, accept: Control+Shift+T, toggle: zh_simp }
+      - { when: has_menu, accept: period, send: Page_Down } # .翻页
+      - { when: has_menu, accept: comma, send: Page_Up } # ，翻页
+  schema_list:
+    - {schema: luna_pinyin_simp}
+  switcher/caption: "【设置菜单】"
+  switcher/option_list_separator: "/"
+  switcher/hotkeys:
+    - "Control+grave"
+#    - "F4"			#屏蔽掉F4
